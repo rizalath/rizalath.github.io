@@ -1,0 +1,1743 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑料福利每日大赛_官方视频门户 | 每日大赛·精品内容社区</title>
+<meta name="description" content="黑料福利每日大赛官方网站，面向创作者与观众的每日赛事视频门户，提供原创高清内容、每日大赛榜单、创作者社区与官方发布动态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff3b30'/%3E%3Cpath d='M24 18l22 14-22 14z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --hl-red:#ff3b30;
+  --hl-red-deep:#d92a20;
+  --hl-ink:#111214;
+  --hl-ink-2:#2a2c31;
+  --hl-gray:#6b6f77;
+  --hl-line:#e4e5e8;
+  --hl-bg:#f6f6f7;
+  --hl-white:#ffffff;
+  --hl-radius:14px;
+  --hl-head-h:112px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hl-head-h)}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--hl-white);
+  color:var(--hl-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+
+/* ===== 吸顶区：公告条 + 页头 ===== */
+.hlm-sticky-wrap{
+  position:sticky;top:0;z-index:120;
+  background:var(--hl-white);
+  box-shadow:0 1px 0 var(--hl-line),0 8px 24px -18px rgba(0,0,0,.5);
+}
+.hlm-announce{
+  background:var(--hl-ink);
+  color:#fff;
+  font-size:12.5px;
+  letter-spacing:.02em;
+}
+.hlm-announce-inner{
+  max-width:1240px;margin:0 auto;padding:8px 20px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.hlm-announce-tag{
+  background:var(--hl-red);color:#fff;font-weight:700;
+  padding:1px 8px;border-radius:4px;font-size:11.5px;flex:none;
+}
+.hlm-announce-text{flex:1 1 260px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hlm-announce-text b{color:#ffd6d3;font-weight:600}
+.hlm-announce-link{color:#ffb3ae;font-size:12px;flex:none;border-bottom:1px dashed rgba(255,179,174,.6)}
+
+.hlm-header{background:var(--hl-white)}
+.hlm-header-inner{
+  max-width:1240px;margin:0 auto;padding:14px 20px;
+  display:flex;align-items:center;gap:22px;
+}
+.hlm-brand{display:flex;align-items:center;gap:10px;flex:none}
+.hlm-brand-mark{
+  width:38px;height:38px;border-radius:10px;
+  background:linear-gradient(140deg,var(--hl-red),#ff7a3d);
+  display:grid;place-items:center;flex:none;
+}
+.hlm-brand-mark svg{width:20px;height:20px}
+.hlm-brand-name{font-size:17px;font-weight:800;letter-spacing:.02em;line-height:1.2}
+.hlm-brand-sub{font-size:10.5px;color:var(--hl-gray);letter-spacing:.14em;text-transform:uppercase}
+.hlm-nav{display:flex;align-items:center;gap:4px;flex:1 1 auto}
+.hlm-nav a{
+  font-size:14px;color:var(--hl-ink-2);padding:8px 12px;border-radius:8px;
+  transition:background .18s,color .18s;white-space:nowrap;
+}
+.hlm-nav a:hover{background:var(--hl-bg);color:var(--hl-red)}
+.hlm-header-tools{display:flex;align-items:center;gap:10px;flex:none}
+.hlm-search{
+  display:flex;align-items:center;gap:6px;
+  border:1px solid var(--hl-line);border-radius:999px;
+  padding:6px 6px 6px 14px;background:var(--hl-bg);
+  transition:border-color .18s,background .18s;
+}
+.hlm-search:focus-within{border-color:var(--hl-red);background:#fff}
+.hlm-search input{
+  border:none;background:transparent;outline:none;font-size:13px;width:150px;color:var(--hl-ink);
+}
+.hlm-search input::placeholder{color:#9aa0a8}
+.hlm-search button{
+  width:28px;height:28px;border-radius:50%;background:var(--hl-red);display:grid;place-items:center;flex:none;
+}
+.hlm-search button svg{width:14px;height:14px}
+.hlm-btn-submit{
+  background:var(--hl-ink);color:#fff;font-size:13px;font-weight:600;
+  padding:9px 16px;border-radius:999px;white-space:nowrap;
+  transition:background .18s,transform .18s;
+}
+.hlm-btn-submit:hover{background:var(--hl-red);transform:translateY(-1px)}
+.hlm-nav-toggle{
+  display:none;width:38px;height:38px;border-radius:9px;border:1px solid var(--hl-line);
+  place-items:center;flex:none;
+}
+.hlm-nav-toggle span{display:block;width:17px;height:2px;background:var(--hl-ink);position:relative}
+.hlm-nav-toggle span::before,.hlm-nav-toggle span::after{
+  content:"";position:absolute;left:0;width:17px;height:2px;background:var(--hl-ink);
+}
+.hlm-nav-toggle span::before{top:-5px}
+.hlm-nav-toggle span::after{top:5px}
+.hlm-search-hint{
+  max-width:1240px;margin:0 auto;padding:0 20px 10px;
+  font-size:12.5px;color:var(--hl-red);display:none;
+}
+.hlm-search-hint.is-on{display:block}
+
+/* ===== 通用容器 ===== */
+.hlm-wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.hlm-section{padding:64px 0}
+.hlm-section--tint{background:var(--hl-bg)}
+.hlm-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.hlm-sec-kicker{
+  font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--hl-red);
+  text-transform:uppercase;margin-bottom:8px;
+}
+.hlm-sec-title{font-size:27px;font-weight:800;line-height:1.3;letter-spacing:.01em}
+.hlm-sec-title em{font-style:normal;color:var(--hl-red)}
+.hlm-sec-desc{font-size:14px;color:var(--hl-gray);max-width:520px}
+.hlm-link-more{
+  font-size:13.5px;font-weight:600;color:var(--hl-ink-2);
+  border-bottom:1px solid var(--hl-ink-2);padding-bottom:2px;flex:none;
+  transition:color .18s,border-color .18s;
+}
+.hlm-link-more:hover{color:var(--hl-red);border-color:var(--hl-red)}
+
+/* ===== 首屏：左文右侧大图 + 数据条 ===== */
+.hlm-hero{background:linear-gradient(180deg,#fff 0%,#fafafb 100%);padding:52px 0 56px;border-bottom:1px solid var(--hl-line)}
+.hlm-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:52px;align-items:center}
+.hlm-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#ffeeed;color:var(--hl-red-deep);
+  font-size:12px;font-weight:700;letter-spacing:.06em;
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+.hlm-hero-badge i{width:6px;height:6px;border-radius:50%;background:var(--hl-red);display:block;animation:hlm-pulse 1.8s infinite}
+@keyframes hlm-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+.hlm-hero h1{
+  font-size:clamp(34px,4.6vw,58px);line-height:1.1;font-weight:900;letter-spacing:-.01em;
+  margin-bottom:8px;
+}
+.hlm-hero h1 span{color:var(--hl-red)}
+.hlm-hero-slogan{
+  font-size:15.5px;font-weight:700;color:var(--hl-ink-2);letter-spacing:.04em;margin-bottom:18px;
+}
+.hlm-hero-intro{font-size:15px;color:#4a4d55;line-height:1.9;margin-bottom:26px;max-width:540px}
+.hlm-hero-intro strong{color:var(--hl-ink);font-weight:700}
+.hlm-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.hlm-btn{
+  font-size:14px;font-weight:700;padding:12px 24px;border-radius:999px;
+  transition:transform .18s,background .18s,box-shadow .18s,color .18s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.hlm-btn svg{width:15px;height:15px}
+.hlm-btn--primary{background:var(--hl-red);color:#fff;box-shadow:0 10px 26px -12px rgba(255,59,48,.8)}
+.hlm-btn--primary:hover{background:var(--hl-red-deep);transform:translateY(-2px)}
+.hlm-btn--ghost{border:1.5px solid var(--hl-ink);color:var(--hl-ink)}
+.hlm-btn--ghost:hover{background:var(--hl-ink);color:#fff;transform:translateY(-2px)}
+.hlm-hero-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  border-top:1px solid var(--hl-line);padding-top:22px;gap:16px;
+}
+.hlm-stat-num{font-size:25px;font-weight:900;letter-spacing:-.02em;line-height:1.15}
+.hlm-stat-num small{font-size:13px;font-weight:700;color:var(--hl-red);margin-left:2px}
+.hlm-stat-label{font-size:12px;color:var(--hl-gray);letter-spacing:.04em}
+
+.hlm-hero-visual{position:relative}
+.hlm-hero-mainimg{
+  border-radius:20px;overflow:hidden;
+  box-shadow:0 34px 60px -34px rgba(17,18,20,.55);
+  aspect-ratio:16/11;background:#ddd;
+}
+.hlm-hero-mainimg img{width:100%;height:100%;object-fit:cover}
+.hlm-hero-float{
+  position:absolute;left:-16px;bottom:-22px;
+  background:#fff;border-radius:14px;padding:12px 16px;
+  box-shadow:0 18px 40px -20px rgba(0,0,0,.45);
+  display:flex;align-items:center;gap:11px;max-width:270px;
+}
+.hlm-hero-float-ico{
+  width:34px;height:34px;border-radius:9px;background:#ffeeed;display:grid;place-items:center;flex:none;
+}
+.hlm-hero-float-ico svg{width:16px;height:16px}
+.hlm-hero-float b{display:block;font-size:13px;line-height:1.3}
+.hlm-hero-float span{font-size:11.5px;color:var(--hl-gray)}
+.hlm-hero-corner{
+  position:absolute;top:-14px;right:-10px;background:var(--hl-ink);color:#fff;
+  font-size:11.5px;font-weight:700;letter-spacing:.08em;
+  padding:7px 13px;border-radius:8px;transform:rotate(3deg);
+}
+
+/* ===== 内容单元通用卡 ===== */
+.hlm-card{
+  background:#fff;border:1px solid var(--hl-line);border-radius:var(--hl-radius);
+  transition:transform .22s,box-shadow .22s,border-color .22s;overflow:hidden;
+}
+.hlm-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -28px rgba(0,0,0,.5);border-color:#d3d5da}
+.hlm-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#e9eaec}
+.hlm-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.hlm-card:hover .hlm-thumb img{transform:scale(1.05)}
+.hlm-thumb-play{
+  position:absolute;right:10px;bottom:10px;
+  width:34px;height:34px;border-radius:50%;background:rgba(17,18,20,.72);
+  display:grid;place-items:center;backdrop-filter:blur(4px);
+}
+.hlm-thumb-play svg{width:13px;height:13px}
+.hlm-thumb-badge{
+  position:absolute;left:10px;top:10px;background:var(--hl-red);color:#fff;
+  font-size:11px;font-weight:700;padding:3px 9px;border-radius:5px;letter-spacing:.04em;
+}
+.hlm-card-body{padding:16px 18px 18px}
+.hlm-card-meta{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--hl-gray);margin-bottom:8px;flex-wrap:wrap}
+.hlm-chip{background:var(--hl-bg);border-radius:5px;padding:2px 8px;font-size:11px;color:#5a5e66}
+.hlm-card-title{font-size:16.5px;font-weight:800;line-height:1.45;margin-bottom:8px}
+.hlm-card-desc{font-size:13.5px;color:#5a5e66;line-height:1.7;margin-bottom:14px}
+.hlm-card-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding-top:12px;border-top:1px dashed var(--hl-line);font-size:12px;color:var(--hl-gray);flex-wrap:wrap;
+}
+.hlm-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.hlm-act{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12px;color:var(--hl-gray);padding:4px 8px;border-radius:7px;
+  transition:background .16s,color .16s;
+}
+.hlm-act:hover{background:var(--hl-bg);color:var(--hl-ink)}
+.hlm-act svg{width:13px;height:13px}
+.hlm-act.is-liked{color:var(--hl-red)}
+.hlm-act.is-liked svg{fill:var(--hl-red);stroke:var(--hl-red)}
+.hlm-act.is-saved{color:#e8720c}
+.hlm-act.is-saved svg{fill:#ffb020;stroke:#ffb020}
+
+/* ===== 焦点区：一大 + 列表 ===== */
+.hlm-focus-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px}
+.hlm-focus-main .hlm-thumb{aspect-ratio:16/10}
+.hlm-focus-main .hlm-card-title{font-size:22px;line-height:1.35}
+.hlm-focus-list{display:flex;flex-direction:column;gap:0}
+.hlm-focus-item{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--hl-line);
+}
+.hlm-focus-item:first-child{padding-top:0}
+.hlm-focus-item:last-child{border-bottom:none;padding-bottom:0}
+.hlm-focus-rank{
+  font-size:20px;font-weight:900;color:#c9ccd2;line-height:1.2;font-style:italic;min-width:30px;
+}
+.hlm-focus-item h3{font-size:15px;font-weight:700;line-height:1.5;margin-bottom:5px}
+.hlm-focus-item p{font-size:12.5px;color:#6a6e76;line-height:1.65;margin-bottom:6px}
+.hlm-focus-tags{display:flex;gap:5px;flex-wrap:wrap;font-size:11px;color:var(--hl-red)}
+.hlm-focus-tags span{background:#fff3f2;padding:1px 7px;border-radius:4px}
+
+/* ===== 视频列表（图文交替单列） ===== */
+.hlm-vlist{display:flex;flex-direction:column;gap:22px}
+.hlm-vrow{
+  display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1fr);gap:26px;align-items:center;
+  background:#fff;border:1px solid var(--hl-line);border-radius:var(--hl-radius);
+  padding:16px;transition:box-shadow .22s,transform .22s,border-color .22s;
+}
+.hlm-vrow:hover{box-shadow:0 22px 44px -30px rgba(0,0,0,.5);transform:translateY(-2px);border-color:#d3d5da}
+.hlm-vrow-rev{grid-template-columns:minmax(0,1fr) minmax(0,.82fr)}
+.hlm-vrow-rev .hlm-vrow-media{order:2}
+.hlm-vrow-media{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/9;background:#e9eaec}
+.hlm-vrow-media img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.hlm-vrow:hover .hlm-vrow-media img{transform:scale(1.04)}
+.hlm-vrow-body{padding:6px 6px 6px 0;min-width:0}
+.hlm-vrow-body h3{font-size:18px;font-weight:800;line-height:1.4;margin-bottom:8px}
+.hlm-vrow-body p{font-size:13.5px;color:#5a5e66;line-height:1.75;margin-bottom:12px}
+.hlm-vrow-byline{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--hl-gray);margin-bottom:12px;flex-wrap:wrap}
+.hlm-ava{
+  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  font-size:11px;font-weight:800;color:#fff;flex:none;letter-spacing:0;
+}
+.hlm-tagset{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.hlm-tagset span{font-size:11.5px;color:#5a5e66;background:var(--hl-bg);border-radius:5px;padding:2px 8px}
+
+/* ===== 专题 ===== */
+.hlm-topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:22px}
+.hlm-topic{padding:22px;display:flex;flex-direction:column;gap:0}
+.hlm-topic-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}
+.hlm-topic h3{font-size:18px;font-weight:800;line-height:1.35}
+.hlm-topic-status{
+  font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;flex:none;
+  background:#e9f7ee;color:#17854a;white-space:nowrap;
+}
+.hlm-topic-status--hot{background:#ffeeed;color:var(--hl-red-deep)}
+.hlm-topic-status--soon{background:#fff5e3;color:#a96508}
+.hlm-topic-desc{font-size:13px;color:#5a5e66;line-height:1.7;margin-bottom:16px;min-height:44px}
+.hlm-topic-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--hl-line)}
+.hlm-topic-list li{
+  font-size:13px;padding:9px 0;border-bottom:1px dashed var(--hl-line);
+  display:flex;align-items:center;gap:8px;color:#3d4048;line-height:1.5;
+}
+.hlm-topic-list li:last-child{border-bottom:none}
+.hlm-topic-list li i{
+  width:5px;height:5px;border-radius:50%;background:var(--hl-red);flex:none;display:block;
+}
+
+/* ===== 关键词深度解析长文 ===== */
+.hlm-deep{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.42fr);gap:44px;align-items:start}
+.hlm-deep h2{font-size:30px;font-weight:900;line-height:1.25;margin-bottom:6px;letter-spacing:-.01em}
+.hlm-deep-lead{font-size:15px;color:#5a5e66;margin-bottom:26px;line-height:1.85}
+.hlm-deep h3{
+  font-size:18px;font-weight:800;margin:26px 0 10px;line-height:1.4;
+  padding-left:13px;position:relative;
+}
+.hlm-deep h3::before{
+  content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:2px;
+  background:var(--hl-red);
+}
+.hlm-deep p{font-size:14.5px;color:#40434b;line-height:1.95;margin-bottom:14px}
+.hlm-deep strong{color:var(--hl-ink);font-weight:700}
+.hlm-deep-aside{
+  position:sticky;top:calc(var(--hl-head-h) + 20px);
+  background:var(--hl-ink);color:#e8e9ec;border-radius:16px;padding:24px;
+}
+.hlm-deep-aside h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:.02em}
+.hlm-deep-aside ul{display:flex;flex-direction:column;gap:10px}
+.hlm-deep-aside li{
+  font-size:12.5px;line-height:1.7;padding-left:16px;position:relative;color:#b9bcc4;
+}
+.hlm-deep-aside li::before{
+  content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:1px;background:var(--hl-red);
+}
+.hlm-deep-aside .hlm-aside-note{
+  margin-top:18px;padding-top:16px;border-top:1px solid #33363c;font-size:12px;color:#8f939b;line-height:1.7;
+}
+
+/* ===== 作者矩阵：双列简介 ===== */
+.hlm-author-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:20px}
+.hlm-author{padding:22px;display:flex;gap:16px;align-items:flex-start}
+.hlm-author-ava{
+  width:54px;height:54px;border-radius:16px;flex:none;
+  display:grid;place-items:center;font-size:19px;font-weight:900;color:#fff;
+}
+.hlm-author-main{min-width:0;flex:1}
+.hlm-author-name{font-size:16px;font-weight:800;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.hlm-author-name span{
+  font-size:10.5px;font-weight:700;background:#ffeeed;color:var(--hl-red-deep);
+  padding:1px 7px;border-radius:4px;letter-spacing:.02em;
+}
+.hlm-author-field{font-size:12px;color:var(--hl-red);font-weight:600;margin:2px 0 8px}
+.hlm-author-bio{font-size:12.8px;color:#5a5e66;line-height:1.72;margin-bottom:11px}
+.hlm-author-nums{display:flex;gap:16px;font-size:11.5px;color:var(--hl-gray);border-top:1px dashed var(--hl-line);padding-top:10px;flex-wrap:wrap}
+.hlm-author-nums b{color:var(--hl-ink);font-weight:800;font-size:12.5px}
+
+/* ===== 评论：双列短评 ===== */
+.hlm-cmt-head{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+.hlm-score{
+  display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--hl-line);
+  border-radius:14px;padding:14px 20px;flex:none;
+}
+.hlm-score-num{font-size:36px;font-weight:900;letter-spacing:-.03em;line-height:1}
+.hlm-score-num small{font-size:14px;color:var(--hl-gray);font-weight:700}
+.hlm-score-stars{font-size:13px;color:#ffb020;letter-spacing:2px;line-height:1.2}
+.hlm-score-sub{font-size:11.5px;color:var(--hl-gray);margin-top:2px}
+.hlm-cmt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
+.hlm-cmt{padding:20px;display:flex;flex-direction:column;gap:10px}
+.hlm-cmt-top{display:flex;align-items:center;gap:10px}
+.hlm-cmt-name{font-size:13.5px;font-weight:700}
+.hlm-cmt-time{font-size:11px;color:#9aa0a8;margin-left:auto;flex:none}
+.hlm-cmt-body{font-size:13.5px;color:#40434b;line-height:1.8}
+.hlm-cmt-body em{font-style:normal;color:var(--hl-red);font-weight:600}
+.hlm-cmt-foot{font-size:11.5px;color:var(--hl-gray);display:flex;gap:14px;border-top:1px dashed var(--hl-line);padding-top:9px}
+.hlm-cmt-foot button:hover{color:var(--hl-red)}
+
+/* ===== 榜单/动态：紧凑条目 ===== */
+.hlm-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start}
+.hlm-board{background:#fff;border:1px solid var(--hl-line);border-radius:16px;padding:8px 22px 18px}
+.hlm-board-tabs{display:flex;gap:4px;padding:14px 0 8px;border-bottom:1px solid var(--hl-line);flex-wrap:wrap}
+.hlm-board-tab{
+  font-size:13px;font-weight:700;color:var(--hl-gray);padding:5px 13px;border-radius:8px;
+  transition:background .16s,color .16s;
+}
+.hlm-board-tab.is-on{background:var(--hl-ink);color:#fff}
+.hlm-board-list li{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;
+  padding:13px 0;border-bottom:1px dashed var(--hl-line);
+}
+.hlm-board-list li:last-child{border-bottom:none}
+.hlm-board-idx{font-size:14px;font-weight:900;color:#c2c5cb;width:20px;font-style:italic}
+.hlm-board-list li:nth-child(-n+3) .hlm-board-idx{color:var(--hl-red)}
+.hlm-board-title{font-size:13.8px;font-weight:600;line-height:1.5}
+.hlm-board-title small{display:block;font-size:11.5px;color:var(--hl-gray);font-weight:400}
+.hlm-board-val{font-size:12px;color:var(--hl-gray);white-space:nowrap}
+.hlm-board-val b{color:var(--hl-ink);font-weight:800}
+
+.hlm-dyn{display:flex;flex-direction:column;gap:14px}
+.hlm-dyn-item{
+  background:#fff;border:1px solid var(--hl-line);border-radius:12px;padding:16px 18px;
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;
+}
+.hlm-dyn-date{
+  font-size:11px;font-weight:800;color:var(--hl-red);letter-spacing:.04em;
+  background:#fff3f2;border-radius:7px;padding:5px 8px;height:fit-content;white-space:nowrap;line-height:1.3;text-align:center;
+}
+.hlm-dyn-item h3{font-size:14.5px;font-weight:700;margin-bottom:4px;line-height:1.5}
+.hlm-dyn-item p{font-size:12.5px;color:#5a5e66;line-height:1.7}
+
+/* ===== 合作墙 ===== */
+.hlm-partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:14px}
+.hlm-partner{
+  border:1px solid var(--hl-line);border-radius:12px;background:#fff;
+  padding:18px 14px;display:flex;align-items:center;gap:11px;
+  transition:border-color .18s,transform .18s;
+}
+.hlm-partner:hover{border-color:var(--hl-red);transform:translateY(-2px)}
+.hlm-partner-ico{width:32px;height:32px;border-radius:8px;flex:none;display:grid;place-items:center;font-size:13px;font-weight:900;color:#fff}
+.hlm-partner b{font-size:13.5px;display:block;line-height:1.3}
+.hlm-partner span{font-size:11px;color:var(--hl-gray)}
+
+/* ===== FAQ ===== */
+.hlm-faq{display:flex;flex-direction:column;gap:10px;max-width:900px}
+.hlm-faq details{
+  background:#fff;border:1px solid var(--hl-line);border-radius:12px;
+  padding:0 20px;transition:border-color .18s,box-shadow .18s;
+}
+.hlm-faq details[open]{border-color:#d3d5da;box-shadow:0 14px 30px -26px rgba(0,0,0,.5)}
+.hlm-faq summary{
+  font-size:14.5px;font-weight:700;padding:16px 26px 16px 0;cursor:pointer;position:relative;list-style:none;
+  line-height:1.5;
+}
+.hlm-faq summary::-webkit-details-marker{display:none}
+.hlm-faq summary::after{
+  content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);
+  font-size:20px;font-weight:400;color:var(--hl-red);line-height:1;
+}
+.hlm-faq details[open] summary::after{content:"−"}
+.hlm-faq details p{font-size:13.5px;color:#5a5e66;line-height:1.85;padding:0 0 18px}
+
+/* ===== 投稿 CTA ===== */
+.hlm-cta{
+  background:linear-gradient(120deg,var(--hl-ink) 0%,#26282e 62%,#3a1a17 100%);
+  color:#fff;border-radius:20px;padding:44px;position:relative;overflow:hidden;
+}
+.hlm-cta::after{
+  content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,59,48,.45),transparent 68%);
+}
+.hlm-cta-inner{position:relative;max-width:600px}
+.hlm-cta h2{font-size:27px;font-weight:900;line-height:1.3;margin-bottom:12px}
+.hlm-cta p{font-size:14.5px;color:#c3c6cd;line-height:1.85;margin-bottom:24px}
+.hlm-cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ===== 页脚 ===== */
+.hlm-footer{background:var(--hl-ink);color:#a7abb4;padding:54px 0 0;font-size:13px}
+.hlm-footer-grid{
+  display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:34px;
+  padding-bottom:40px;border-bottom:1px solid #2a2c31;
+}
+.hlm-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px;color:#fff}
+.hlm-footer-brand b{font-size:16px;font-weight:800}
+.hlm-footer p{line-height:1.9;margin-bottom:10px;font-size:12.5px}
+.hlm-footer h3{font-size:12.5px;font-weight:800;color:#fff;letter-spacing:.1em;margin-bottom:14px;text-transform:uppercase}
+.hlm-footer ul{display:flex;flex-direction:column;gap:9px}
+.hlm-footer ul a{font-size:12.5px;color:#a7abb4;transition:color .16s}
+.hlm-footer ul a:hover{color:#fff}
+.hlm-footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:20px 0 26px;font-size:11.8px;color:#7f8390;
+}
+.hlm-footer-bottom a:hover{color:#fff}
+
+/* ===== 弹窗 & Toast ===== */
+.hlm-modal{
+  position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px;
+  background:rgba(12,13,15,.62);backdrop-filter:blur(3px);
+}
+.hlm-modal.is-open{display:flex}
+.hlm-modal-box{
+  background:#fff;border-radius:18px;max-width:520px;width:100%;padding:28px;
+  max-height:86vh;overflow:auto;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);
+}
+.hlm-modal-box h3{font-size:19px;font-weight:900;margin-bottom:8px}
+.hlm-modal-box p{font-size:13.5px;color:#5a5e66;line-height:1.8;margin-bottom:18px}
+.hlm-modal-close{
+  margin-left:auto;display:block;width:30px;height:30px;border-radius:50%;background:var(--hl-bg);
+  font-size:17px;line-height:1;color:var(--hl-gray);
+}
+.hlm-field{margin-bottom:14px}
+.hlm-field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:6px;color:var(--hl-ink-2)}
+.hlm-field input,.hlm-field textarea,.hlm-field select{
+  width:100%;border:1px solid var(--hl-line);border-radius:9px;padding:10px 12px;
+  font-size:13.5px;font-family:inherit;outline:none;background:#fbfbfc;color:var(--hl-ink);
+}
+.hlm-field input:focus,.hlm-field textarea:focus,.hlm-field select:focus{border-color:var(--hl-red);background:#fff}
+.hlm-field textarea{min-height:88px;resize:vertical}
+.hlm-share-row{display:flex;gap:10px;flex-wrap:wrap}
+.hlm-share-btn{
+  flex:1 1 120px;border:1px solid var(--hl-line);border-radius:10px;padding:14px 10px;
+  font-size:13px;font-weight:700;text-align:center;transition:border-color .16s,color .16s,transform .16s;
+}
+.hlm-share-btn:hover{border-color:var(--hl-red);color:var(--hl-red);transform:translateY(-2px)}
+.hlm-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:var(--hl-ink);color:#fff;font-size:13.5px;font-weight:600;
+  padding:11px 22px;border-radius:999px;z-index:300;
+  opacity:0;pointer-events:none;transition:opacity .24s,transform .24s;
+  box-shadow:0 16px 40px -18px rgba(0,0,0,.7);
+}
+.hlm-toast.is-on{opacity:1;transform:translate(-50%,0)}
+
+/* ===== 回到顶部 ===== */
+.hlm-top{
+  position:fixed;right:22px;bottom:26px;z-index:150;
+  width:46px;height:46px;border-radius:50%;background:var(--hl-ink);color:#fff;
+  display:grid;place-items:center;box-shadow:0 14px 30px -14px rgba(0,0,0,.6);
+  opacity:0;pointer-events:none;transform:translateY(12px);
+  transition:opacity .22s,transform .22s,background .18s;
+}
+.hlm-top.is-on{opacity:1;pointer-events:auto;transform:translateY(0)}
+.hlm-top:hover{background:var(--hl-red)}
+.hlm-top svg{width:17px;height:17px}
+
+/* ===== 响应式 ===== */
+@media (max-width:1080px){
+  .hlm-hero-grid{grid-template-columns:1fr;gap:40px}
+  .hlm-hero-intro{max-width:none}
+  .hlm-deep{grid-template-columns:1fr;gap:32px}
+  .hlm-deep-aside{position:static}
+  .hlm-focus-grid{grid-template-columns:1fr}
+  .hlm-split{grid-template-columns:1fr}
+  .hlm-footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  :root{--hl-head-h:104px}
+  .hlm-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:#fff;flex-direction:column;align-items:stretch;gap:2px;
+    padding:10px 14px 16px;border-top:1px solid var(--hl-line);
+    box-shadow:0 22px 40px -24px rgba(0,0,0,.5);
+  }
+  .hlm-nav.is-open{display:flex}
+  .hlm-nav a{padding:11px 12px;font-size:14.5px;border-radius:9px}
+  .hlm-header-inner{position:relative;gap:12px;flex-wrap:wrap}
+  .hlm-header-tools{order:3;width:100%;justify-content:space-between}
+  .hlm-search{flex:1 1 auto}
+  .hlm-search input{width:100%}
+  .hlm-nav-toggle{display:grid;margin-left:auto}
+  .hlm-btn-submit{display:none}
+  .hlm-vrow,.hlm-vrow-rev{grid-template-columns:1fr;gap:0;padding:14px}
+  .hlm-vrow-rev .hlm-vrow-media{order:0}
+  .hlm-vrow-body{padding:14px 4px 4px}
+  .hlm-cta{padding:30px 24px}
+  .hlm-section{padding:48px 0}
+}
+@media (max-width:620px){
+  .hlm-announce-text{display:none}
+  .hlm-announce-inner{padding:7px 16px;gap:8px}
+  .hlm-hero-stats{grid-template-columns:1fr 1fr}
+  .hlm-hero-float{left:auto;right:8px;bottom:-18px;padding:10px 13px;max-width:230px}
+  .hlm-hero-corner{display:none}
+  .hlm-sec-title{font-size:23px}
+  .hlm-deep h2,.hlm-cta h2{font-size:24px}
+  .hlm-focus-main .hlm-card-title{font-size:19px}
+  .hlm-footer-grid{grid-template-columns:1fr;gap:28px}
+  .hlm-toast{font-size:12.5px;bottom:20px;padding:10px 18px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- S1 公告条 + 页头（吸顶） -->
+<div class="hlm-sticky-wrap">
+  <div class="hlm-announce">
+    <div class="hlm-announce-inner">
+      <span class="hlm-announce-tag">官方发布</span>
+      <div class="hlm-announce-text">每日大赛第 47 赛季开启：新增 <b>「城市夜拍」</b> 与 <b>「一分钟反转」</b> 两条赛道，11 月 24 日 20:00 开放上传</div>
+      <a class="hlm-announce-link" href="#hlm-topics">查看赛程规则</a>
+    </div>
+  </div>
+  <header class="hlm-header">
+    <div class="hlm-header-inner">
+      <a class="hlm-brand" href="#hlm-top" aria-label="黑料福利每日大赛官网首页">
+        <span class="hlm-brand-mark">
+          <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+        </span>
+        <span>
+          <span class="hlm-brand-name">黑料福利每日大赛</span>
+          <span class="hlm-brand-sub">DAILY MATCH · OFFICIAL</span>
+        </span>
+      </a>
+      <nav class="hlm-nav" id="hlmNav" aria-label="主导航">
+        <a href="#hlm-top">首页</a>
+        <a href="#hlm-focus">每日焦点</a>
+        <a href="#hlm-videos">大赛视频</a>
+        <a href="#hlm-topics">赛季专题</a>
+        <a href="#hlm-authors">创作者</a>
+        <a href="#hlm-board">榜单动态</a>
+        <a href="#hlm-faq">帮助</a>
+      </nav>
+      <div class="hlm-header-tools">
+        <div class="hlm-search">
+          <input id="hlmSearchInput" type="search" placeholder="搜索赛题 / 创作者 / 专题" aria-label="站内搜索">
+          <button id="hlmSearchBtn" type="button" aria-label="搜索">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+          </button>
+        </div>
+        <button class="hlm-btn-submit" type="button" id="hlmOpenSubmit">我要投稿</button>
+        <button class="hlm-nav-toggle" type="button" id="hlmNavToggle" aria-label="展开导航" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+    <div class="hlm-search-hint" id="hlmSearchHint" role="status"></div>
+  </header>
+</div>
+
+<!-- S2 品牌首屏：左文 + 右侧大图 + 数据条 -->
+<section class="hlm-hero" id="hlm-top">
+  <div class="hlm-wrap">
+    <div class="hlm-hero-grid">
+      <div>
+        <span class="hlm-hero-badge"><i></i>第 47 赛季 · 每日更新</span>
+        <h1>黑料福利每日大赛</h1>
+        <p class="hlm-hero-slogan">每天一场公开赛题，每人一次公平上场</p>
+        <p class="hlm-hero-intro">
+          作为深耕短视频竞技领域的<strong>官方网站</strong>，黑料福利每日大赛以「每日一题、公开评判、社区共建」为核心机制，为创作者与企业搭建高品质内容生态。我们持续运营原创、正版的<strong>高清</strong>赛事内容，用真实的作品说话，让每一次上传都被认真看见。
+        </p>
+        <div class="hlm-hero-actions">
+          <a class="hlm-btn hlm-btn--primary" href="#hlm-videos">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+            观看今日赛场
+          </a>
+          <button class="hlm-btn hlm-btn--ghost" type="button" id="hlmHeroReport">赛题反馈</button>
+        </div>
+        <div class="hlm-hero-stats">
+          <div>
+            <div class="hlm-stat-num">1,286<small>场</small></div>
+            <div class="hlm-stat-label">已开赛场次</div>
+          </div>
+          <div>
+            <div class="hlm-stat-num">32.6<small>万</small></div>
+            <div class="hlm-stat-label">社区创作者</div>
+          </div>
+          <div>
+            <div class="hlm-stat-num">98.4<small>%</small></div>
+            <div class="hlm-stat-label">作品原创通过率</div>
+          </div>
+        </div>
+      </div>
+      <div class="hlm-hero-visual">
+        <span class="hlm-hero-corner">TODAY · 47-1122</span>
+        <div class="hlm-hero-mainimg">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 550'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23111317'/%3E%3Cstop offset='0.55' stop-color='%233a1c1a'/%3E%3Cstop offset='1' stop-color='%23ff3b30'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='550' fill='url(%23g1)'/%3E%3Cg opacity='0.22' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M0 420h800M0 330h800M0 240h800M160 0v550M320 0v550M480 0v550M640 0v550'/%3E%3C/g%3E%3Ccircle cx='600' cy='160' r='150' fill='%23ff6b3d' opacity='0.35'/%3E%3Ccircle cx='600' cy='160' r='92' fill='none' stroke='%23ffd9d2' stroke-width='2' opacity='0.6'/%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='130' cy='120' r='7'/%3E%3Ccircle cx='172' cy='120' r='7' opacity='0.5'/%3E%3Ccircle cx='214' cy='120' r='7' opacity='0.25'/%3E%3C/g%3E%3Crect x='96' y='196' width='300' height='16' rx='8' fill='%23ffffff' opacity='0.85'/%3E%3Crect x='96' y='232' width='216' height='12' rx='6' fill='%23ffffff' opacity='0.45'/%3E%3Crect x='96' y='258' width='252' height='12' rx='6' fill='%23ffffff' opacity='0.3'/%3E%3Cg transform='translate(96 330)'%3E%3Crect width='150' height='44' rx='22' fill='%23ffffff'/%3E%3Cpath d='M66 14l16 8-16 8z' fill='%23ff3b30'/%3E%3C/text%3E%3C/g%3E%3Cg transform='translate(430 380)' opacity='0.9'%3E%3Crect width='286' height='120' rx='14' fill='%23111317' opacity='0.7'/%3E%3Crect x='20' y='24' width='112' height='10' rx='5' fill='%23ffb3ae'/%3E%3Crect x='20' y='48' width='186' height='8' rx='4' fill='%23ffffff' opacity='0.4'/%3E%3Crect x='20' y='68' width='146' height='8' rx='4' fill='%23ffffff' opacity='0.25'/%3E%3Crect x='20' y='90' width='74' height='12' rx='6' fill='%23ff3b30'/%3E%3C/g%3E%3C/svg%3E" alt="黑料福利每日大赛第47赛季赛场主视觉：深色网格背景与红色赛区光圈">
+        </div>
+        <div class="hlm-hero-float">
+          <span class="hlm-hero-float-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"/></svg>
+          </span>
+          <span>
+            <b>今日赛题已开榜</b>
+            <span>2,431 份作品参与公开投票</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S3 焦点内容：一大 + 文字推荐 -->
+<section class="hlm-section" id="hlm-focus">
+  <div class="hlm-wrap">
+    <div class="hlm-sec-head">
+      <div>
+        <div class="hlm-sec-kicker">Daily Focus</div>
+        <h2 class="hlm-sec-title">今日<em>焦点</em>：赛题作品与场外解读</h2>
+        <p class="hlm-sec-desc">由编辑组与社区评审共同推选，每天从上千份投稿里挑出最值得完整看完的几条，附上赛题解读与创作侧记。</p>
+      </div>
+      <a class="hlm-link-more" href="#hlm-videos">浏览全部大赛视频</a>
+    </div>
+
+    <div class="hlm-focus-grid">
+      <article class="hlm-card hlm-focus-main">
+        <div class="hlm-thumb">
+          <span class="hlm-thumb-badge">今日最佳</span>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='a1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230e1a2b'/%3E%3Cstop offset='1' stop-color='%23204a6b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23a1)'/%3E%3Ccircle cx='640' cy='110' r='58' fill='%23ffe9a8' opacity='0.85'/%3E%3Cg fill='%230e1a2b'%3E%3Cpath d='M0 500V330l120-56 96 40 132-92 118 60 150-44 184 82v180z' opacity='0.9'/%3E%3Cpath d='M0 500V392l150-44 128 54 140-34 132 46 138-30 112 28v88z' opacity='0.65'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-width='2' opacity='0.5' fill='none'%3E%3Ccircle cx='220' cy='150' r='34'/%3E%3Cpath d='M186 150h68M220 116v68'/%3E%3C/g%3E%3Ctext x='48' y='86' font-family='sans-serif' font-size='30' font-weight='bold' fill='%23ffffff'%3E城市夜拍 · 24H%3C/text%3E%3C/svg%3E" alt="城市夜拍赛道获奖作品封面：深蓝夜色山城轮廓与月亮">
+          <span class="hlm-thumb-play">
+            <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+          </span>
+        </div>
+        <div class="hlm-card-body">
+          <div class="hlm-card-meta">
+            <span class="hlm-chip">赛道 · 城市夜拍</span>
+            <span>11 月 22 日 06:12 发布</span>
+          </div>
+          <h3 class="hlm-card-title">《凌晨四点的过江轮渡》：一支用三脚架守了六小时的城市夜拍</h3>
+          <p class="hlm-card-desc">创作者「江面阿岸」在赛题开放的第一天就把机位固定在了轮渡二层。全片没有一句旁白，只有汽笛、脚步和水声，结尾字幕只留了一行：城市睡着的时候，还有人在上班。评审给出的评价是「冷静、克制、有体温」。</p>
+          <div class="hlm-card-foot">
+            <div class="hlm-actions">
+              <button class="hlm-act" type="button" data-hlm-like>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.6 12 20 12 20z"/></svg>
+                <span data-hlm-like-count>3,482</span>
+              </button>
+              <button class="hlm-act" type="button" data-hlm-save>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z"/></svg>
+                收藏
+              </button>
+              <button class="hlm-act" type="button" data-hlm-copy>复制链接</button>
+            </div>
+            <span>播放 42.8 万</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="hlm-focus-list">
+        <article class="hlm-focus-item">
+          <div class="hlm-focus-rank">02</div>
+          <div>
+            <h3>《一分钟反转》赛道复盘：三个让人倒回去重看的剪辑点</h3>
+            <p>剪辑师「剪子不磨」拆解本周反转赛道的三支高票作品，重点讲信息投放的节奏：什么时候给线索、什么时候把观众骗过去。</p>
+            <div class="hlm-focus-tags"><span>教程干货</span><span>剪辑拆解</span><span>6 分 14 秒</span></div>
+          </div>
+        </article>
+        <article class="hlm-focus-item">
+          <div class="hlm-focus-rank">03</div>
+          <div>
+            <h3>评审圆桌：公开评判到底要不要给分数</h3>
+            <p>四位常驻评审坐下来聊了五十分钟，从「分数会不会伤害创作」聊到「社区投票如何防止抱团」，全程无剪辑实录。</p>
+            <div class="hlm-focus-tags"><span>人物访谈</span><span>赛制讨论</span><span>51 分 02 秒</span></div>
+          </div>
+        </article>
+        <article class="hlm-focus-item">
+          <div class="hlm-focus-rank">04</div>
+          <div>
+            <h3>从第 1 赛季到第 47 赛季：赛场规则的四次大改</h3>
+            <p>把四年间的规则文档翻出来对照，讲清楚为什么取消过「按点赞排名」，又为什么把原创校验提前到了上传环节。</p>
+            <div class="hlm-focus-tags"><span>品牌故事</span><span>行业观察</span><span>图文长读</span></div>
+          </div>
+        </article>
+        <article class="hlm-focus-item">
+          <div class="hlm-focus-rank">05</div>
+          <div>
+            <h3>新人第一次投稿全流程：从选题到过审的 9 个动作</h3>
+            <p>一位第 46 赛季才注册的创作者，把第一次投稿的完整屏幕录制剪成教程，包含素材授权、字幕规范与封面比例。</p>
+            <div class="hlm-focus-tags"><span>实用技巧</span><span>新手攻略</span><span>11 分 37 秒</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S3 视频区：图文交替单列 -->
+<section class="hlm-section hlm-section--tint" id="hlm-videos">
+  <div class="hlm-wrap">
+    <div class="hlm-sec-head">
+      <div>
+        <div class="hlm-sec-kicker">Match videos</div>
+        <h2 class="hlm-sec-title">大赛<em>视频</em>：本周值得完整看完的五支</h2>
+        <p class="hlm-sec-desc">每个条目都标注赛道、作者与公开数据，视频内容全部为原创正版高清成片，禁止搬运与二次剪辑后冒充原创。</p>
+      </div>
+    </div>
+
+    <div class="hlm-vlist">
+      <article class="hlm-vrow">
+        <div class="hlm-vrow-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23f4e7d6'/%3E%3Ccircle cx='620' cy='120' r='96' fill='%23c96a2a' opacity='0.25'/%3E%3Cg fill='%235b3a22'%3E%3Crect x='0' y='300' width='800' height='150'/%3E%3C/g%3E%3Cg fill='%23e8c7a2'%3E%3Crect x='110' y='170' width='170' height='130' rx='6'/%3E%3Crect x='320' y='200' width='130' height='100' rx='6'/%3E%3C/g%3E%3Cg stroke='%235b3a22' stroke-width='7' fill='none'%3E%3Cpath d='M180 170v-46M420 200v-36'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.9'%3E%3Crect x='130' y='196' width='52' height='38' rx='3'/%3E%3Crect x='210' y='196' width='52' height='38' rx='3'/%3E%3Crect x='340' y='226' width='44' height='32' rx='3'/%3E%3C/g%3E%3Ctext x='48' y='72' font-family='sans-serif' font-size='26' font-weight='bold' fill='%235b3a22'%3E老街早餐 · 06:00%3C/text%3E%3C/svg%3E" alt="老街早餐赛道作品封面：暖米色巷口与刚开门的早餐铺">
+        </div>
+        <div class="hlm-vrow-body">
+          <h3>《一条街的早餐时间表》：从五点四十到九点半的烟火气</h3>
+          <p>作者用一整条街做了个时间轴：包子铺、豆浆摊、修鞋摊、菜市场轮流登场，镜头没有特效，靠的是一次次蹲点。作品上线两天进入每日大赛口碑榜前三，评论区里最常见的一句话是「这就是我家楼下」。</p>
+          <div class="hlm-vrow-byline">
+            <span class="hlm-ava" style="background:#c96a2a">陈</span>
+            <span>陈师傅的镜头</span>
+            <span>·</span><span>赛道：日常记录</span>
+            <span>·</span><span>播放 31.5 万</span>
+          </div>
+          <div class="hlm-tagset"><span>日常记录</span><span>在地文化</span><span>12 分 08 秒</span></div>
+          <div class="hlm-actions">
+            <button class="hlm-act" type="button" data-hlm-like>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.6 12 20 12 20z"/></svg>
+              <span data-hlm-like-count>2,116</span>
+            </button>
+            <button class="hlm-act" type="button" data-hlm-save>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z"/></svg>
+              收藏
+            </button>
+            <button class="hlm-act" type="button" data-hlm-copy>复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="hlm-vrow hlm-vrow-rev">
+        <div class="hlm-vrow-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23101820'/%3E%3Cg stroke='%233ddc97' stroke-width='2' opacity='0.6' fill='none'%3E%3Cpath d='M60 360l110-130 96 88 120-160 128 176 104-116 122 142'/%3E%3C/g%3E%3Cg fill='%233ddc97'%3E%3Ccircle cx='170' cy='230' r='7'/%3E%3Ccircle cx='266' cy='318' r='7'/%3E%3Ccircle cx='386' cy='158' r='7'/%3E%3Ccircle cx='514' cy='334' r='7'/%3E%3Ccircle cx='640' cy='176' r='7'/%3E%3C/g%3E%3Crect x='60' y='70' width='240' height='14' rx='7' fill='%233ddc97' opacity='0.85'/%3E%3Crect x='60' y='100' width='160' height='10' rx='5' fill='%23ffffff' opacity='0.35'/%3E%3C/svg%3E" alt="数据型复盘视频封面：深色背景上的增长折线与绿色节点">
+        </div>
+        <div class="hlm-vrow-body">
+          <h3>《我用 30 天数据复盘了 200 支参赛作品》：哪些开头活得更久</h3>
+          <p>作者把公开数据抓下来做了统计：前三秒出现人脸的作品完播率高出 18%，而片头超过七秒的作品有近半在第五秒流失。视频把结论拆成了可执行的六条建议，并附上了完整表格的查看方式。</p>
+          <div class="hlm-vrow-byline">
+            <span class="hlm-ava" style="background:#0f8f5f">数</span>
+            <span>数据不打烊</span>
+            <span>·</span><span>赛道：深度测评</span>
+            <span>·</span><span>播放 26.2 万</span>
+          </div>
+          <div class="hlm-tagset"><span>深度测评</span><span>行业观察</span><span>18 分 45 秒</span></div>
+          <div class="hlm-actions">
+            <button class="hlm-act" type="button" data-hlm-like>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.6 12 20 12 20z"/></svg>
+              <span data-hlm-like-count>1,874</span>
+            </button>
+            <button class="hlm-act" type="button" data-hlm-save>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z"/></svg>
+              收藏
+            </button>
+            <button class="hlm-act" type="button" data-hlm-copy>复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="hlm-vrow">
+        <div class="hlm-vrow-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23eef1f4'/%3E%3Cg fill='%23223a53'%3E%3Ccircle cx='250' cy='230' r='86'/%3E%3Ccircle cx='250' cy='230' r='52' fill='%23eef1f4'/%3E%3C/g%3E%3Cg fill='%23d0553b'%3E%3Crect x='470' y='150' width='190' height='160' rx='12'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.9'%3E%3Crect x='498' y='184' width='134' height='12' rx='6'/%3E%3Crect x='498' y='212' width='96' height='10' rx='5'/%3E%3Crect x='498' y='238' width='118' height='10' rx='5'/%3E%3C/g%3E%3Cg stroke='%23223a53' stroke-width='6' fill='none'%3E%3Cpath d='M336 230h110'/%3E%3Cpath d='M430 214l18 16-18 16'/%3E%3C/g%3E%3Ctext x='48' y='72' font-family='sans-serif' font-size='26' font-weight='bold' fill='%23223a53'%3E一分钟反转 · 拆解%3C/text%3E%3C/svg%3E" alt="一分钟反转赛道拆解视频封面：蓝灰色图形与红色方块的结构示意">
+        </div>
+        <div class="hlm-vrow-body">
+          <h3>《反转不是翻桌》：把 12 支高票短片的叙事结构画成图</h3>
+          <p>这支视频几乎不讲技巧，而是把 12 支作品的叙事节奏画成了时间轴，让观众自己看见「铺垫—误导—揭示」的比例差异。作者说，反转真正的力量来自信息的诚实，而不是骗人。</p>
+          <div class="hlm-vrow-byline">
+            <span class="hlm-ava" style="background:#223a53">林</span>
+            <span>林深讲结构</span>
+            <span>·</span><span>赛道：教程干货</span>
+            <span>·</span><span>播放 19.8 万</span>
+          </div>
+          <div class="hlm-tagset"><span>教程干货</span><span>创作幕后</span><span>9 分 12 秒</span></div>
+          <div class="hlm-actions">
+            <button class="hlm-act" type="button" data-hlm-like>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.6 12 20 12 20z"/></svg>
+              <span data-hlm-like-count>1,402</span>
+            </button>
+            <button class="hlm-act" type="button" data-hlm-save>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z"/></svg>
+              收藏
+            </button>
+            <button class="hlm-act" type="button" data-hlm-copy>复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="hlm-vrow hlm-vrow-rev">
+        <div class="hlm-vrow-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%233d2b45'/%3E%3Cg fill='%23ffd166'%3E%3Ccircle cx='180' cy='150' r='46'/%3E%3Ccircle cx='300' cy='150' r='46' opacity='0.6'/%3E%3Ccircle cx='420' cy='150' r='46' opacity='0.3'/%3E%3C/g%3E%3Cg stroke='%23f5e6ff' stroke-width='4' fill='none' opacity='0.8'%3E%3Cpath d='M120 300c90-60 180 60 270 0s180-60 270 0'/%3E%3C/g%3E%3Cg fill='%23f5e6ff' opacity='0.75'%3E%3Crect x='120' y='350' width='150' height='10' rx='5'/%3E%3Crect x='120' y='374' width='230' height='10' rx='5' opacity='0.5'/%3E%3C/g%3E%3Ctext x='48' y='72' font-family='sans-serif' font-size='26' font-weight='bold' fill='%23ffd166'%3E评审圆桌 · 实录%3C/text%3E%3C/svg%3E" alt="评审圆桌视频封面：紫色背景与金色圆形构成的访谈场景示意">
+        </div>
+        <div class="hlm-vrow-body">
+          <h3>《分数会不会伤害创作》：四位评审的五十分钟实录</h3>
+          <p>这场圆桌没有结论，只有不同立场的碰撞。有人坚持排名是社区活力的来源，有人认为评分会让创作者去猜评审的喜好。视频保留了所有停顿与打断，也保留了一位评审中途改变观点的过程。</p>
+          <div class="hlm-vrow-byline">
+            <span class="hlm-ava" style="background:#6b4b7a">评</span>
+            <span>评审圆桌</span>
+            <span>·</span><span>赛道：人物访谈</span>
+            <span>·</span><span>播放 15.3 万</span>
+          </div>
+          <div class="hlm-tagset"><span>人物访谈</span><span>赛制讨论</span><span>51 分 02 秒</span></div>
+          <div class="hlm-actions">
+            <button class="hlm-act" type="button" data-hlm-like>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.6 12 20 12 20z"/></svg>
+              <span data-hlm-like-count>986</span>
+            </button>
+            <button class="hlm-act" type="button" data-hlm-save>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z"/></svg>
+              收藏
+            </button>
+            <button class="hlm-act" type="button" data-hlm-copy>复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="hlm-vrow">
+        <div class="hlm-vrow-media">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23dfe9e3'/%3E%3Cg fill='%233f6b57'%3E%3Cpath d='M0 450V330l150-70 120 52 170-88 160 74 200-56v208z'/%3E%3C/g%3E%3Cg fill='%23f2b84b'%3E%3Ccircle cx='640' cy='110' r='54'/%3E%3C/g%3E%3Cg stroke='%233f6b57' stroke-width='5' fill='none'%3E%3Cpath d='M120 250l70-46 64 42 78-54'/%3E%3C/g%3E%3Cg fill='%233f6b57' opacity='0.6'%3E%3Ccircle cx='120' cy='250' r='8'/%3E%3Ccircle cx='190' cy='204' r='8'/%3E%3Ccircle cx='254' cy='246' r='8'/%3E%3Ccircle cx='332' cy='192' r='8'/%3E%3C/g%3E%3Ctext x='48' y='72' font-family='sans-serif' font-size='26' font-weight='bold' fill='%233f6b57'%3E户外徒步 · 装备实测%3C/text%3E%3C/svg%3E" alt="户外徒步装备测评封面：浅绿色山脊线与黄色太阳">
+        </div>
+        <div class="hlm-vrow-body">
+          <h3>《一双鞋走完 120 公里》：三段山路的真实磨损记录</h3>
+          <p>作者没有在影棚里测评，而是穿着同一双鞋走了三段不同地貌的山路，记录鞋底磨损、脚踝疲劳与水泡位置。视频结尾把三个月的记录做成了对照表，也承认了这次测评样本量只有一个人。</p>
+          <div class="hlm-vrow-byline">
+            <span class="hlm-ava" style="background:#3f6b57">山</span>
+            <span>山脊记录员</span>
+            <span>·</span><span>赛道：深度测评</span>
+            <span>·</span><span>播放 12.7 万</span>
+          </div>
+          <div class="hlm-tagset"><span>深度测评</span><span>户外活动</span><span>16 分 30 秒</span></div>
+          <div class="hlm-actions">
+            <button class="hlm-act" type="button" data-hlm-like>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20s-7-4.4-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.6 12 20 12 20z"/></svg>
+              <span data-hlm-like-count>743</span>
+            </button>
+            <button class="hlm-act" type="button" data-hlm-save>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z"/></svg>
+              收藏
+            </button>
+            <button class="hlm-act" type="button" data-hlm-copy>复制链接</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- S4 专题 / 企划 -->
+<section class="hlm-section" id="hlm-topics">
+  <div class="hlm-wrap">
+    <div class="hlm-sec-head">
+      <div>
+        <div class="hlm-sec-kicker">Season 47</div>
+        <h2 class="hlm-sec-title">赛季<em>专题</em>与企划：四条正在进行的赛道</h2>
+        <p class="hlm-sec-desc">每条赛道都有独立的赛题说明、更新节奏与评审标准。专题页会同步收录参赛作品、幕后记录与评审笔记，方便后来者按图索骥。</p>
+      </div>
+      <a class="hlm-link-more" href="#hlm-faq">赛季规则与帮助</a>
+    </div>
+
+    <div class="hlm-topic-grid">
+      <article class="hlm-card hlm-topic">
+        <div class="hlm-topic-head">
+          <h3>城市夜拍 24H</h3>
+          <span class="hlm-topic-status hlm-topic-status--hot">进行中</span>
+        </div>
+        <p class="hlm-topic-desc">限时 24 小时，在同一座城市里完成从入夜到天亮的记录。不要求剧情，只要求在真实的光线下拍摄，禁止使用滤镜冒充夜景。</p>
+        <ul class="hlm-topic-list">
+          <li><i></i>《凌晨四点的过江轮渡》· 江面阿岸</li>
+          <li><i></i>《便利店最后一小时》· 夜班小吴</li>
+          <li><i></i>《高架桥下的理发摊》· 三块钱镜头</li>
+        </ul>
+      </article>
+
+      <article class="hlm-card hlm-topic">
+        <div class="hlm-topic-head">
+          <h3>一分钟反转</h3>
+          <span class="hlm-topic-status">长期赛道</span>
+        </div>
+        <p class="hlm-topic-desc">一分钟内完成一次信息反转。我们鼓励诚实的误导，而不是靠剪辑制造虚假事实。每期会公布三条评审笔记，解释为什么某些反转被扣分。</p>
+        <ul class="hlm-topic-list">
+          <li><i></i>《反转不是翻桌》· 林深讲结构</li>
+          <li><i></i>《最后一帧才出现的门牌》· 阿栗</li>
+          <li><i></i>《我把台词全删了》· 沉默对白组</li>
+        </ul>
+      </article>
+
+      <article class="hlm-card hlm-topic">
+        <div class="hlm-topic-head">
+          <h3>民间手艺人</h3>
+          <span class="hlm-topic-status hlm-topic-status--soon">11 月 26 日开赛</span>
+        </div>
+        <p class="hlm-topic-desc">记录一门正在消失的手艺，或者一位仍在坚持的手艺人。专题会为优秀作品提供额外的整理与归档支持，让资料不只停留在视频平台。</p>
+        <ul class="hlm-topic-list">
+          <li><i></i>《编了四十年竹篮的手》· 南塘记录</li>
+          <li><i></i>《修表匠的放大镜》· 老陈的抽屉</li>
+          <li><i></i>《最后一家弹棉花铺》· 城市边角料</li>
+        </ul>
+      </article>
+
+      <article class="hlm-card hlm-topic">
+        <div class="hlm-topic-head">
+          <h3>我的第一支片</h3>
+          <span class="hlm-topic-status">新人企划</span>
+        </div>
+        <p class="hlm-topic-desc">只对首次投稿的创作者开放。不评比技术，只看是否真诚地讲完一件事。入选作品会获得编辑点评与下一赛季的推荐位。</p>
+        <ul class="hlm-topic-list">
+          <li><i></i>《我拍了我妈做早饭》· 小周同学</li>
+          <li><i></i>《手机也能拍出稳定的镜头》· 慢慢学</li>
+          <li><i></i>《第一次投稿全流程》· 林小满</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- S4/M15 关键词深度解析 -->
+<section class="hlm-section hlm-section--tint" id="hlm-about">
+  <div class="hlm-wrap">
+    <div class="hlm-deep">
+      <div>
+        <div class="hlm-sec-kicker">About the match</div>
+        <h2>关于「黑料福利每日大赛」：一个每日赛场如何持续运转</h2>
+        <p class="hlm-deep-lead">很多人第一次听到这个名字，会以为它只是一个短期活动。实际上，黑料福利每日大赛是一套已经持续运营四年多的社区赛事机制，官方网站承担的是规则发布、作品收录、数据公开与争议处理这几件看起来枯燥但必须有人做的事。</p>
+
+        <h3>一、名称之下的内容逻辑：赛事、福利与公开性</h3>
+        <p>「每日」是这个品牌最核心的承诺。每个自然日，赛题会在固定时间发布，作品在固定时间截止上传，评审与社区投票在同一套公开规则下进行。所谓「大赛」，不是一年一度的颁奖礼，而是每天都会发生的小规模竞技：一道题、一群参赛者、一份公开的结果。<strong>黑料福利每日大赛</strong>之所以把这套机制坚持下来，是因为我们相信稳定的节奏比偶尔的爆款更能培养创作者。</p>
+        <p>至于「福利」，在官方语境里它指的是三件具体的事：第一，参赛作品的基础播放与展示资源对所有创作者平等开放，不因粉丝量而区别对待；第二，每个赛季的入选作品会进入官方精品内容档案，获得长期的整理、归档与推荐；第三，社区会为新人提供剪辑素材授权、字幕模板与设备借用等实际支持。这些「福利」不是抽奖式的刺激，而是<strong>持续运营</strong>的基础设施。我们不希望创作者把这里当成一次性的流量场，而希望它是一个可以长期练习、试错、被认真反馈的地方。</p>
+        <p>名称中的另一个词，我们也愿意正面回应。平台对「未经核实的信息」有明确的处理规范：作品若涉及他人隐私、未经授权的素材或可能引发误解的剪辑，会在上传环节被拦截，并在人工复核后给出具体理由。公开的规则意味着争议可以讨论，也意味着我们必须为自己的判断负责。</p>
+
+        <h3>二、赛场如何组织：从赛题发布到结果公示</h3>
+        <p>一场完整的每日大赛通常分为五个阶段。第一阶段是赛题发布，通常在前一晚 20:00 于官方网站与社区同步更新，包含主题、时长限制、素材要求与禁用手段。第二阶段是上传期，创作者在 24 小时内完成投稿，系统会自动校验分辨率、时长与原创声明，人工复核则集中在第二天上午。第三阶段是公开投票，所有作品按赛道进入统一列表，投票权重对账号注册时长与历史行为做轻度调节，以减少批量注册带来的干扰。</p>
+        <p>第四阶段是评审复核。常驻评审会在投票结果的基础上给出专业意见，重点看叙事完整度、信息真实性与技术完成度。如果评审意见与社区投票出现明显分歧，会进入公开讨论环节，评审必须在专题页写下具体理由，而不是只给一个分数。第五阶段是结果公示与归档，入选作品进入<strong>精品内容</strong>档案，同时开放创作者申诉通道，申诉处理结果也会公示。</p>
+        <p>这套流程听起来繁琐，但正是这些不讨巧的环节，让「每日大赛」能够在四年间保持相对稳定的口碑。我们在行业观察里多次提到：一个内容社区真正的护城河不是流量，而是<strong>值得信赖</strong>的规则与可预期的反馈。创作者愿意把最好的作品交给一个会认真回复的地方，观众也愿意在一个不靠标题党的地方停留。</p>
+
+        <h3>三、创作者与观众：一个双向的社区生态</h3>
+        <p>目前社区里有超过三十二万名注册创作者，其中约四成是近一年内加入的新人。这个结构决定了我们必须同时服务两种需求：新人需要明确的入门路径与低压力的练习场，成熟创作者需要稳定的展示位与可被讨论的作品。为此，每日大赛在赛道设计上做了分层——「我的第一支片」只对首次投稿开放，评审标准以真诚为先；「一分钟反转」「城市夜拍」等赛道则对技术要求更高，适合有一定积累的作者。</p>
+        <p>观众这一侧，我们坚持三件事：不做诱导点击的标题、不隐藏作品的真实数据、不把评论区变成情绪垃圾桶。评论区会保留不同意见，但会处理人身攻击与未经证实的指控。我们相信<strong>真实</strong>和<strong>温暖</strong>不是靠宣传语实现的，而是靠一条条具体的处理决定的累积。也正因为如此，很多观众会在评论里写下很长的话，讲自己为什么喜欢某支片子，这些文字有时比视频本身更长、更动人。</p>
+        <p>对于企业与合作方，官方网站提供的是透明的合作说明：合作内容会明确标注，不参与赛事评审，不影响投票结果。我们愿意承认商业合作的存在，但不愿意让它悄悄改变比赛的公平性。这也是「用户至上」这四个字在实际运营中的具体含义——它不是一个口号，而是一连串需要反复解释、反复坚持的选择。</p>
+
+        <h3>四、接下来的方向：把赛场做成长期档案</h3>
+        <p>第 47 赛季开始，我们会把每一场赛事的规则、作品列表与评审笔记做成长久可访问的档案页，即使视频下线，文字记录仍然保留。同时，正在测试的「创作灵感」工具会根据往届赛题生成选题建议与结构提示，帮助新人跨过第一步。我们希望黑料福利每日大赛不只是一个每天更新的页面，而是一份可以被后来者查阅的、关于普通人如何用镜头记录生活的长期档案。这条路不快，但我们打算一直走下去。</p>
+      </div>
+
+      <aside class="hlm-deep-aside">
+        <h3>核心数据与运营准则</h3>
+        <ul>
+          <li>已开赛场次 1,286 场，覆盖 4 个赛季主题方向</li>
+          <li>累计收录原创作品 9.7 万支，人工复核率 100%</li>
+          <li>常驻评审 12 位，全部公开身份与评审笔记</li>
+          <li>合作内容与赛事评审完全分离，标注清晰</li>
+          <li>申诉通道 48 小时内响应，处理结果公示</li>
+        </ul>
+        <div class="hlm-aside-note">
+          本栏目由编辑组维护，相关规则以官方发布的最新版本为准。任何涉及作品版权的疑问，均可在帮助中心提交说明。
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- S5 创作者矩阵：双列简介 -->
+<section class="hlm-section" id="hlm-authors">
+  <div class="hlm-wrap">
+    <div class="hlm-sec-head">
+      <div>
+        <div class="hlm-sec-kicker">Creators</div>
+        <h2 class="hlm-sec-title">赛场上的<em>创作者</em>：六位值得关注的常驻作者</h2>
+        <p class="hlm-sec-desc">他们来自不同城市、不同职业，共同点是把每日大赛当成长期练习场。点开作者信息可以查看其擅长领域与代表作品。</p>
+      </div>
+    </div>
+
+    <div class="hlm-author-grid">
+      <article class="hlm-card hlm-author">
+        <div class="hlm-author-ava" style="background:#b5482f">江</div>
+        <div class="hlm-author-main">
+          <div class="hlm-author-name">江面阿岸 <span>金牌作者</span></div>
+          <div class="hlm-author-field">城市夜拍 · 纪实长镜</div>
+          <p class="hlm-author-bio">在江边长大，习惯用固定机位等待光线变化。作品几乎没有旁白与配乐，靠环境声与时间本身推进。第 47 赛季城市夜拍赛道首位获得评审全票的作者，也是社区里被模仿最多的构图风格来源之一。</p>
+          <div class="hlm-author-nums">
+            <span>作品 <b>86</b></span>
+            <span>粉丝 <b>12.4 万</b></span>
+            <span>入选精品 <b>23</b></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hlm-card hlm-author">
+        <div class="hlm-author-ava" style="background:#223a53">林</div>
+        <div class="hlm-author-main">
+          <div class="hlm-author-name">林深讲结构 <span>教程作者</span></div>
+          <div class="hlm-author-field">叙事结构 · 剪辑拆解</div>
+          <p class="hlm-author-bio">前广告公司剪辑师，现在专职做叙事教学。擅长把抽象的节奏问题画成图，让新人第一次看懂「为什么这里要停两秒」。每周三更新一期拆解，被不少高校影视社团当作课外材料使用。</p>
+          <div class="hlm-author-nums">
+            <span>作品 <b>142</b></span>
+            <span>粉丝 <b>18.7 万</b></span>
+            <span>入选精品 <b>31</b></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hlm-card hlm-author">
+        <div class="hlm-author-ava" style="background:#0f8f5f">数</div>
+        <div class="hlm-author-main">
+          <div class="hlm-author-name">数据不打烊 <span>行业观察</span></div>
+          <div class="hlm-author-field">数据复盘 · 内容分析</div>
+          <p class="hlm-author-bio">白天做数据分析，晚上做视频。坚持只使用公开数据，每期视频都会附上取数口径与局限说明。她的作品常常引发评论区对方法论本身的讨论，也促使官方在专题页公开更多统计细节。</p>
+          <div class="hlm-author-nums">
+            <span>作品 <b>64</b></span>
+            <span>粉丝 <b>9.2 万</b></span>
+            <span>入选精品 <b>17</b></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hlm-card hlm-author">
+        <div class="hlm-author-ava" style="background:#c96a2a">陈</div>
+        <div class="hlm-author-main">
+          <div class="hlm-author-name">陈师傅的镜头 <span>纪实作者</span></div>
+          <div class="hlm-author-field">日常记录 · 在地文化</div>
+          <p class="hlm-author-bio">五十岁开始学拍摄，第一支作品拍的是自家楼下的早餐街。镜头不追求炫技，但总能在最普通的生活里找到值得停留的瞬间。他说自己最大的收获不是粉丝数，而是街坊们开始主动叫他去记录。</p>
+          <div class="hlm-author-nums">
+            <span>作品 <b>57</b></span>
+            <span>粉丝 <b>7.8 万</b></span>
+            <span>入选精品 <b>19</b></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hlm-card hlm-author">
+        <div class="hlm-author-ava" style="background:#6b4b7a">阿</div>
+        <div class="hlm-author-main">
+          <div class="hlm-author-name">阿栗的抽屉 <span>新人作者</span></div>
+          <div class="hlm-author-field">情感故事 · 短片创作</div>
+          <p class="hlm-author-bio">第 46 赛季才注册的新人，靠一支三分钟的家常短片进入当周口碑榜。她的作品常常只有一个场景、两个人，却能把未说出口的话留在画面里。目前正在筹备自己的第一个系列短片。</p>
+          <div class="hlm-author-nums">
+            <span>作品 <b>21</b></span>
+            <span>粉丝 <b>3.6 万</b></span>
+            <span>入选精品 <b>8</b></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="hlm-card hlm-author">
+        <div class="hlm-author-ava" style="background:#3f6b57">山</div>
+        <div class="hlm-author-main">
+          <div class="hlm-author-name">山脊记录员 <span>户外作者</span></div>
+          <div class="hlm-author-field">户外活动 · 装备实测</div>
+          <p class="hlm-author-bio">一年有三分之一时间在山里。测评从不回避缺点，会明确写出样本量与测试条件。他坚持自己背设备、自己徒步，所以画面常常晃动，但观众愿意相信他镜头里的每一段路都是真的走出来的。</p>
+          <div class="hlm-author-nums">
+            <span>作品 <b>73</b></span>
+            <span>粉丝 <b>11.1 万</b></span>
+            <span>入选精品 <b>26</b></span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- S6 榜单 + 动态 -->
+<section class="hlm-section hlm-section--tint" id="hlm-board">
+  <div class="hlm-wrap">
+    <div class="hlm-sec-head">
+      <div>
+        <div class="hlm-sec-kicker">Ranking &amp; News</div>
+        <h2 class="hlm-sec-title"><em>榜单</em>与官方动态：数据公开，随时可查</h2>
+        <p class="hlm-sec-desc">榜单按公开数据每小时更新一次，展示的是当日赛场的即时状态，不代表最终评审结果。官方动态与内容更新会同步在这两个栏目里。</p>
+      </div>
+    </div>
+
+    <div class="hlm-split">
+      <div class="hlm-board">
+        <div class="hlm-board-tabs" role="tablist" aria-label="榜单切换">
+          <button class="hlm-board-tab is-on" type="button" data-hlm-board-tab="hot" role="tab" aria-selected="true">热度榜</button>
+          <button class="hlm-board-tab" type="button" data-hlm-board-tab="new" role="tab" aria-selected="false">新人榜</button>
+          <button class="hlm-board-tab" type="button" data-hlm-board-tab="rep" role="tab" aria-selected="false">口碑榜</button>
+        </div>
+        <ul class="hlm-board-list" id="hlmBoardList">
+          <li>
+            <span class="hlm-board-idx">1</span>
+            <span class="hlm-board-title">《凌晨四点的过江轮渡》<small>城市夜拍 · 江面阿岸</small></span>
+            <span class="hlm-board-val"><b>42.8</b> 万播放</span>
+          </li>
+          <li>
+            <span class="hlm-board-idx">2</span>
+            <span class="hlm-board-title">《一条街的早餐时间表》<small>日常记录 · 陈师傅的镜头</small></span>
+            <span class="hlm-board-val"><b>31.5</b> 万播放</span>
+          </li>
+          <li>
+            <span class="hlm-board-idx">3</span>
+            <span class="hlm-board-title">《我用 30 天数据复盘了 200 支作品》<small>深度测评 · 数据不打烊</small></span>
+            <span class="hlm-board-val"><b>26.2</b> 万播放</span>
+          </li>
+          <li>
+            <span class="hlm-board-idx">4</span>
+            <span class="hlm-board-title">《反转不是翻桌》<small>教程干货 · 林深讲结构</small></span>
+            <span class="hlm-board-val"><b>19.8</b> 万播放</span>
+          </li>
+          <li>
+            <span class="hlm-board-idx">5</span>
+            <span class="hlm-board-title">《分数会不会伤害创作》<small>人物访谈 · 评审圆桌</small></span>
+            <span class="hlm-board-val"><b>15.3</b> 万播放</span>
+          </li>
+          <li>
+            <span class="hlm-board-idx">6</span>
+            <span class="hlm-board-title">《一双鞋走完 120 公里》<small>深度测评 · 山脊记录员</small></span>
+            <span class="hlm-board-val"><b>12.7</b> 万播放</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hlm-dyn">
+        <article class="hlm-dyn-item">
+          <span class="hlm-dyn-date">11·22</span>
+          <div>
+            <h3>官方发布：第 47 赛季赛道细则更新</h3>
+            <p>城市夜拍赛道新增「禁止使用他人拍摄素材」条款，一分钟反转赛道明确禁止伪造时间戳。细则已在专题页同步，11 月 24 日 20:00 起生效。</p>
+          </div>
+        </article>
+        <article class="hlm-dyn-item">
+          <span class="hlm-dyn-date">11·20</span>
+          <div>
+            <h3>内容更新：精品内容档案新增 36 支作品</h3>
+            <p>第 46 赛季的入选作品完成归档，全部标注原作者与拍摄信息，支持按赛道、城市与年份筛选查看。</p>
+          </div>
+        </article>
+        <article class="hlm-dyn-item">
+          <span class="hlm-dyn-date">11·18</span>
+          <div>
+            <h3>品牌动态：评审团队新增两位常驻成员</h3>
+            <p>新增成员分别来自纪录片与声音设计领域，完整履历与评审笔记入口已在作者区公开，观众可查看其历史评分理由。</p>
+          </div>
+        </article>
+        <article class="hlm-dyn-item">
+          <span class="hlm-dyn-date">11·15</span>
+          <div>
+            <h3>持续运营：上传通道完成稳定性升级</h3>
+            <p>上传与转码流程做了分片处理，大文件中断后可续传，同时新增素材授权确认环节，减少后续版权争议。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- M11 合作品牌 -->
+<section class="hlm-section" id="hlm-partners">
+  <div class="hlm-wrap">
+    <div class="hlm-sec-head">
+      <div>
+        <div class="hlm-sec-kicker">Partners</div>
+        <h2 class="hlm-sec-title">合作<em>伙伴</em>：一起把赛场做得更耐用</h2>
+        <p class="hlm-sec-desc">以下合作方为赛事提供设备、场地或技术支持，均不参与评审，也不影响投票结果。合作内容在页面中明确标注。</p>
+      </div>
+    </div>
+    <div class="hlm-partners">
+      <div class="hlm-partner">
+        <span class="hlm-partner-ico" style="background:#223a53">设</span>
+        <span><b>设备支持方</b><span>提供拍摄器材借用</span></span>
+      </div>
+      <div class="hlm-partner">
+        <span class="hlm-partner-ico" style="background:#b5482f">场</span>
+        <span><b>场地协作方</b><span>开放城市记录点位</span></span>
+      </div>
+      <div class="hlm-partner">
+        <span class="hlm-partner-ico" style="background:#0f8f5f">声</span>
+        <span><b>声音设计伙伴</b><span>提供环境声素材库</span></span>
+      </div>
+      <div class="hlm-partner">
+        <span class="hlm-partner-ico" style="background:#6b4b7a">档</span>
+        <span><b>影像档案伙伴</b><span>协助长期归档整理</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S6 评论区：双列短评 + 评分摘要 -->
+<section class="hlm-section hlm-section--tint" id="hlm-comments">
+  <div class="hlm-wrap">
+    <div class="hlm-sec-head">
+      <div>
+        <div class="hlm-sec-kicker">Community voices</div>
+        <h2 class="hlm-sec-title">社区<em>评价</em>：来自观众与参赛者的真实反馈</h2>
+      </div>
+    </div>
+
+    <div class="hlm-cmt-head">
+      <div class="hlm-score">
+        <div class="hlm-score-num">4.7<small>/5</small></div>
+        <div>
+          <div class="hlm-score-stars">★★★★★</div>
+          <div class="hlm-score-sub">基于 2,431 条公开评价</div>
+        </div>
+      </div>
+      <p class="hlm-sec-desc" style="max-width:560px;margin:0">评价来自参赛者与观众，未做筛选与美化。我们会保留批评，但会处理人身攻击与未经证实的指控。</p>
+    </div>
+
+    <div class="hlm-cmt-grid">
+      <article class="hlm-card hlm-cmt">
+        <div class="hlm-cmt-top">
+          <span class="hlm-ava" style="background:#b5482f">小</span>
+          <span class="hlm-cmt-name">小林在拍片</span>
+          <span class="hlm-cmt-time">11 月 22 日</span>
+        </div>
+        <p class="hlm-cmt-body">第一次投稿紧张到手抖，没想到第二天就收到了人工复核的具体建议，连字幕字号都写了。<em>这种反馈比一个分数有用太多。</em></p>
+        <div class="hlm-cmt-foot"><span>有用 46</span><span>赛道：我的第一支片</span></div>
+      </article>
+
+      <article class="hlm-card hlm-cmt">
+        <div class="hlm-cmt-top">
+          <span class="hlm-ava" style="background:#223a53">老</span>
+          <span class="hlm-cmt-name">老周看片</span>
+          <span class="hlm-cmt-time">11 月 21 日</span>
+        </div>
+        <p class="hlm-cmt-body">作为观众，最满意的是没有那种点进去发现货不对板的标题。虽然更新慢一点，但每天愿意打开看一眼，这已经很难得了。</p>
+        <div class="hlm-cmt-foot"><span>有用 38</span><span>观众评价</span></div>
+      </article>
+
+      <article class="hlm-card hlm-cmt">
+        <div class="hlm-cmt-top">
+          <span class="hlm-ava" style="background:#0f8f5f">数</span>
+          <span class="hlm-cmt-name">爱看数据的人</span>
+          <span class="hlm-cmt-time">11 月 20 日</span>
+        </div>
+        <p class="hlm-cmt-body">榜单更新频率和取数口径算是写清楚了，但希望新人榜能再加一列「首次投稿时间」，这样对比起来更公平。已通过反馈渠道提交。</p>
+        <div class="hlm-cmt-foot"><span>有用 27</span><span>产品建议</span></div>
+      </article>
+
+      <article class="hlm-card hlm-cmt">
+        <div class="hlm-cmt-top">
+          <span class="hlm-ava" style="background:#c96a2a">陈</span>
+          <span class="hlm-cmt-name">陈师傅的邻居</span>
+          <span class="hlm-cmt-time">11 月 19 日</span>
+        </div>
+        <p class="hlm-cmt-body">看着他扛着三脚架在街口站了一个礼拜，最后拍出来的东西把我们这条街都拍活了。<em>感谢这个平台让普通人也有被看见的机会。</em></p>
+        <div class="hlm-cmt-foot"><span>有用 52</span><span>赛道：日常记录</span></div>
+      </article>
+
+      <article class="hlm-card hlm-cmt">
+        <div class="hlm-cmt-top">
+          <span class="hlm-ava" style="background:#6b4b7a">剪</span>
+          <span class="hlm-cmt-name">剪到凌晨三点</span>
+          <span class="hlm-cmt-time">11 月 18 日</span>
+        </div>
+        <p class="hlm-cmt-body">评审笔记是我每周最期待的内容，比很多付费课讲得实在。不过偶尔觉得部分评审语气有点严厉，新人可能会被吓到，希望更温和一些。</p>
+        <div class="hlm-cmt-foot"><span>有用 19</span><span>参赛者评价</span></div>
+      </article>
+
+      <article class="hlm-card hlm-cmt">
+        <div class="hlm-cmt-top">
+          <span class="hlm-ava" style="background:#3f6b57">山</span>
+          <span class="hlm-cmt-name">山下有雾</span>
+          <span class="hlm-cmt-time">11 月 17 日</span>
+        </div>
+        <p class="hlm-cmt-body">户外赛道的测评视频质量比我预期高，作者会主动写样本量只有一个，这种诚实让人愿意继续看下去。希望以后多几支长一点的记录。</p>
+        <div class="hlm-cmt-foot"><span>有用 31</span><span>观众评价</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- S7 辅助区：投稿 CTA + FAQ -->
+<section class="hlm-section" id="hlm-join">
+  <div class="hlm-wrap">
+    <div class="hlm-cta" style="margin-bottom:52px">
+      <div class="hlm-cta-inner">
+        <h2>把你的第一支片交给我们</h2>
+        <p>每日大赛对所有创作者开放报名，不设粉丝门槛。上传前请确认素材授权、字幕规范与原创声明，人工复核会在 48 小时内给出具体反馈。我们更在意你是否讲完了一件事，而不是设备有多贵。</p>
+        <div class="hlm-cta-actions">
+          <button class="hlm-btn hlm-btn--primary" type="button" id="hlmCtaSubmit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></svg>
+            立即投稿报名
+          </button>
+          <a class="hlm-btn hlm-btn--ghost" href="#hlm-faq" style="border-color:#fff;color:#fff">先看规则</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hlm-sec-head">
+      <div>
+        <div class="hlm-sec-kicker">Help center</div>
+        <h2 class="hlm-sec-title">常见<em>问题</em>：关于投稿、评审与版权</h2>
+      </div>
+    </div>
+    <div class="hlm-faq">
+      <details open>
+        <summary>每日大赛的投稿时间是怎么安排的？</summary>
+        <p>赛题通常在前一晚 20:00 通过官方网站与社区同步发布，上传通道随即开放，截止时间为次日晚 20:00。特殊情况会提前在公告条与动态栏目说明。建议预留至少两小时处理转码与复核，避免临近截止失败。</p>
+      </details>
+      <details>
+        <summary>我需要专业设备才能参赛吗？</summary>
+        <p>不需要。赛事按赛道判定标准，不按设备档次评分。手机拍摄的作品只要画面稳定、声音清楚、信息完整，同样有机会入选精品内容。事实上，近三个赛季的入选作品中有四成以上是用手机完成的。</p>
+      </details>
+      <details>
+        <summary>原创校验具体看什么？</summary>
+        <p>主要看三件事：素材是否为本人拍摄或已获授权、是否搬运他人成片、是否存在伪造时间与事实的剪辑。我们接受合理的引用与二创，但要求在简介中标注来源。若被判定为搬运，会给出具体理由并开放申诉。</p>
+      </details>
+      <details>
+        <summary>评审分数与社区投票哪个更重要？</summary>
+        <p>两者是并行的参考维度。社区投票反映当下观众的喜好，评审意见侧重叙事完整度与技术完成度。当两者分歧明显时，会进入公开讨论环节，评审必须写明理由。最终的「精品内容」认定以规则为准，不只看票数。</p>
+      </details>
+      <details>
+        <summary>作品被下架或未通过复核，可以申诉吗？</summary>
+        <p>可以。申诉入口在个人中心的作品详情页，需在结果公布后 7 日内提交。我们承诺 48 小时内响应，处理结果会公示在作品页。若申诉成立，将恢复作品并给出书面说明。</p>
+      </details>
+      <details>
+        <summary>合作内容会影响比赛结果吗？</summary>
+        <p>不会。所有商业合作都在页面明确标注，合作方不参与评审，也不进入投票权重体系。我们会在合作说明中公开合作范围与时间，接受社区监督。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- S8 页脚 -->
+<footer class="hlm-footer">
+  <div class="hlm-wrap">
+    <div class="hlm-footer-grid">
+      <div>
+        <div class="hlm-footer-brand">
+          <span class="hlm-brand-mark" style="width:32px;height:32px;border-radius:8px">
+            <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true" style="width:16px;height:16px"><path d="M8 5l11 7-11 7z"/></svg>
+          </span>
+          <b>黑料福利每日大赛</b>
+        </div>
+        <p>黑料福利每日大赛官方网站，专注每日公开赛事的视频内容社区。我们持续运营原创、正版的精品内容，为创作者与企业搭建高品质内容生态。</p>
+        <p>官方发布 · 持续运营中 · 用户至上 · 值得信赖</p>
+      </div>
+      <div>
+        <h3>赛事</h3>
+        <ul>
+          <li><a href="#hlm-videos">大赛视频</a></li>
+          <li><a href="#hlm-topics">赛季专题</a></li>
+          <li><a href="#hlm-board">榜单动态</a></li>
+          <li><a href="#hlm-faq">规则与帮助</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>社区</h3>
+        <ul>
+          <li><a href="#hlm-authors">创作者名录</a></li>
+          <li><a href="#hlm-comments">社区评价</a></li>
+          <li><a href="#hlm-join">我要投稿</a></li>
+          <li><a href="#hlm-about">品牌故事</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>联系</h3>
+        <ul>
+          <li><a href="#hlm-join">合作与咨询</a></li>
+          <li><a href="#hlm-join">版权申诉</a></li>
+          <li><a href="#hlm-join">反馈建议</a></li>
+          <li><a href="#hlm-top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hlm-footer-bottom">
+      <span>© 2026 黑料福利每日大赛 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容均为原创正版高清作品 · 未经授权禁止搬运</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 弹窗：投稿 -->
+<div class="hlm-modal" id="hlmSubmitModal" role="dialog" aria-modal="true" aria-labelledby="hlmSubmitTitle">
+  <div class="hlm-modal-box">
+    <button class="hlm-modal-close" type="button" data-hlm-close aria-label="关闭">×</button>
+    <h3 id="hlmSubmitTitle">投稿报名 · 第 47 赛季</h3>
+    <p>请填写基本信息，提交后我们会把完整上传须知发送到你的联系邮箱。所有作品需为原创或已获授权。</p>
+    <form id="hlmSubmitForm">
+      <div class="hlm-field">
+        <label for="hlmSName">创作者昵称</label>
+        <input id="hlmSName" type="text" required placeholder="用于作品署名">
+      </div>
+      <div class="hlm-field">
+        <label for="hlmSMail">联系邮箱</label>
+        <input id="hlmSMail" type="email" required placeholder="用于接收复核结果">
+      </div>
+      <div class="hlm-field">
+        <label for="hlmSTrack">意向赛道</label>
+        <select id="hlmSTrack">
+          <option>城市夜拍 24H</option>
+          <option>一分钟反转</option>
+          <option>民间手艺人</option>
+          <option>我的第一支片</option>
+        </select>
+      </div>
+      <div class="hlm-field">
+        <label for="hlmSDesc">作品一句话介绍</label>
+        <textarea id="hlmSDesc" placeholder="简单说说你拍了什么"></textarea>
+      </div>
+      <button class="hlm-btn hlm-btn--primary" type="submit" style="width:100%;justify-content:center">提交报名</button>
+    </form>
+  </div>
+</div>
+
+<!-- 弹窗：反馈/举报 -->
+<div class="hlm-modal" id="hlmReportModal" role="dialog" aria-modal="true" aria-labelledby="hlmReportTitle">
+  <div class="hlm-modal-box">
+    <button class="hlm-modal-close" type="button" data-hlm-close aria-label="关闭">×</button>
+    <h3 id="hlmReportTitle">反馈 / 举报</h3>
+    <p>如果你发现问题作品、规则歧义或页面异常，请简要描述。我们会在 48 小时内响应，并对处理结果做出说明。</p>
+    <form id="hlmReportForm">
+      <div class="hlm-field">
+        <label for="hlmRType">反馈类型</label>
+        <select id="hlmRType">
+          <option>作品版权问题</option>
+          <option>规则疑问</option>
+          <option>页面功能异常</option>
+          <option>其他建议</option>
+        </select>
+      </div>
+      <div class="hlm-field">
+        <label for="hlmRText">详细说明</label>
+        <textarea id="hlmRText" required placeholder="请描述具体情况"></textarea>
+      </div>
+      <button class="hlm-btn hlm-btn--primary" type="submit" style="width:100%;justify-content:center">提交反馈</button>
+    </form>
+  </div>
+</div>
+
+<!-- 弹窗：分享 -->
+<div class="hlm-modal" id="hlmShareModal" role="dialog" aria-modal="true" aria-labelledby="hlmShareTitle">
+  <div class="hlm-modal-box">
+    <button class="hlm-modal-close" type="button" data-hlm-close aria-label="关闭">×</button>
+    <h3 id="hlmShareTitle">分享这条内容</h3>
+    <p>把你在看的大赛视频分享给朋友，或者复制链接自行发送。</p>
+    <div class="hlm-share-row">
+      <button class="hlm-share-btn" type="button" data-hlm-share="微信">微信</button>
+      <button class="hlm-share-btn" type="button" data-hlm-share="微博">微博</button>
+      <button class="hlm-share-btn" type="button" data-hlm-share="QQ">QQ</button>
+      <button class="hlm-share-btn" type="button" data-hlm-copy>复制链接</button>
+    </div>
+  </div>
+</div>
+
+<div class="hlm-toast" id="hlmToast" role="status" aria-live="polite"></div>
+
+<button class="hlm-top" type="button" id="hlmTopBtn" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 20V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 工具 ---------- */
+  var toastEl = document.getElementById('hlmToast');
+  var toastTimer = null;
+  function toast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('is-on'); }, 2200);
+  }
+
+  function openModal(id){
+    var m = document.getElementById(id);
+    if(!m) return;
+    m.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(m){
+    if(!m) return;
+    m.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.hlm-modal').forEach(function(m){
+    m.addEventListener('click', function(e){
+      if(e.target === m || e.target.hasAttribute('data-hlm-close')) closeModal(m);
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.hlm-modal.is-open').forEach(closeModal);
+    }
+  });
+
+  /* ---------- 移动端导航 ---------- */
+  var navToggle = document.getElementById('hlmNavToggle');
+  var nav = document.getElementById('hlmNav');
+  if(navToggle && nav){
+    navToggle.addEventListener('click', function(){
+      var on = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', on ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('hlmSearchInput');
+  var searchBtn = document.getElementById('hlmSearchBtn');
+  var searchHint = document.getElementById('hlmSearchHint');
+  var searchIndex = [
+    '城市夜拍 24H', '一分钟反转', '民间手艺人', '我的第一支片',
+    '凌晨四点的过江轮渡', '一条街的早餐时间表', '我用 30 天数据复盘了 200 支作品',
+    '反转不是翻桌', '分数会不会伤害创作', '一双鞋走完 120 公里',
+    '江面阿岸', '林深讲结构', '数据不打烊', '陈师傅的镜头', '阿栗的抽屉', '山脊记录员',
+    '热度榜', '新人榜', '口碑榜', '投稿报名', '评审笔记'
+  ];
+  function doSearch(){
+    var q = (searchInput && searchInput.value || '').trim();
+    if(!q){
+      if(searchHint){ searchHint.textContent = '请输入关键词，例如「夜拍」「反转」或创作者昵称。'; searchHint.classList.add('is-on'); }
+      return;
+    }
+    var hits = searchIndex.filter(function(item){
+      return item.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+    });
+    if(!searchHint) return;
+    searchHint.classList.add('is-on');
+    if(hits.length){
+      searchHint.textContent = '找到 ' + hits.length + ' 条相关内容：' + hits.slice(0,4).join(' · ') + (hits.length > 4 ? ' 等' : '');
+    }else{
+      searchHint.textContent = '没有找到与「' + q + '」直接匹配的内容，试试「夜拍」「评审」或作者昵称。';
+    }
+  }
+  if(searchBtn) searchBtn.addEventListener('click', doSearch);
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+  }
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('[data-hlm-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var counter = btn.querySelector('[data-hlm-like-count]');
+      var num = counter ? parseInt(counter.textContent.replace(/,/g,''), 10) : 0;
+      if(isNaN(num)) num = 0;
+      var liked = btn.classList.toggle('is-liked');
+      num = liked ? num + 1 : Math.max(0, num - 1);
+      if(counter) counter.textContent = num.toLocaleString('en-US');
+      toast(liked ? '已点赞，感谢支持' : '已取消点赞');
+    });
+  });
+
+  document.querySelectorAll('[data-hlm-save]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('is-saved');
+      toast(on ? '已收藏到「我的关注」' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 复制链接 / 分享 ---------- */
+  function copyLink(){
+    var fake = '官方页面链接已复制，可粘贴分享给朋友';
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(document.title).then(function(){
+        toast(fake);
+      }).catch(function(){
+        toast('复制失败，请手动选择页面地址分享');
+      });
+    }else{
+      toast(fake);
+    }
+  }
+  document.querySelectorAll('[data-hlm-copy]').forEach(function(btn){
+    btn.addEventListener('click', copyLink);
+  });
+  document.querySelectorAll('[data-hlm-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var ch = btn.getAttribute('data-hlm-share');
+      closeModal(btn.closest('.hlm-modal'));
+      toast('已生成分享内容，可在' + ch + '中粘贴发送');
+    });
+  });
+
+  /* ---------- 榜单切换 ---------- */
+  var boardData = {
+    hot: [
+      ['《凌晨四点的过江轮渡》','城市夜拍 · 江面阿岸','42.8','万播放'],
+      ['《一条街的早餐时间表》','日常记录 · 陈师傅的镜头','31.5','万播放'],
+      ['《我用 30 天数据复盘了 200 支作品》','深度测评 · 数据不打烊','26.2','万播放'],
+      ['《反转不是翻桌》','教程干货 · 林深讲结构','19.8','万播放'],
+      ['《分数会不会伤害创作》','人物访谈 · 评审圆桌','15.3','万播放'],
+      ['《一双鞋走完 120 公里》','深度测评 · 山脊记录员','12.7','万播放']
+    ],
+    new: [
+      ['《我拍了我妈做早饭》','我的第一支片 · 小周同学','4.6','万播放'],
+      ['《手机也能拍出稳定的镜头》','我的第一支片 · 慢慢学','3.9','万播放'],
+      ['《第一次投稿全流程》','我的第一支片 · 林小满','3.2','万播放'],
+      ['《最后一帧才出现的门牌》','一分钟反转 · 阿栗','2.8','万播放'],
+      ['《我把台词全删了》','一分钟反转 · 沉默对白组','2.1','万播放'],
+      ['《修表匠的放大镜》','民间手艺人 · 老陈的抽屉','1.7','万播放']
+    ],
+    rep: [
+      ['《一条街的早餐时间表》','口碑 9.6 · 日常记录','9.6','口碑分'],
+      ['《凌晨四点的过江轮渡》','口碑 9.4 · 城市夜拍','9.4','口碑分'],
+      ['《一双鞋走完 120 公里》','口碑 9.2 · 深度测评','9.2','口碑分'],
+      ['《反转不是翻桌》','口碑 9.1 · 教程干货','9.1','口碑分'],
+      ['《分数会不会伤害创作》','口碑 8.9 · 人物访谈','8.9','口碑分'],
+      ['《我用 30 天数据复盘了 200 支作品》','口碑 8.8 · 深度测评','8.8','口碑分']
+    ]
+  };
+  var boardList = document.getElementById('hlmBoardList');
+  document.querySelectorAll('[data-hlm-board-tab]').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      document.querySelectorAll('[data-hlm-board-tab]').forEach(function(t){
+        t.classList.remove('is-on');
+        t.setAttribute('aria-selected','false');
+      });
+      tab.classList.add('is-on');
+      tab.setAttribute('aria-selected','true');
+      var key = tab.getAttribute('data-hlm-board-tab');
+      var rows = boardData[key] || [];
+      if(!boardList) return;
+      boardList.innerHTML = rows.map(function(r, i){
+        return '<li>' +
+          '<span class="hlm-board-idx">' + (i+1) + '</span>' +
+          '<span class="hlm-board-title">' + r[0] + '<small>' + r[1] + '</small></span>' +
+          '<span class="hlm-board-val"><b>' + r[2] + '</b> ' + r[3] + '</span>' +
+        '</li>';
+      }).join('');
+    });
+  });
+
+  /* ---------- 投稿弹窗 ---------- */
+  var submitModal = document.getElementById('hlmSubmitModal');
+  ['hlmOpenSubmit','hlmCtaSubmit'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.addEventListener('click', function(){ openModal('hlmSubmitModal'); });
+  });
+  var submitForm = document.getElementById('hlmSubmitForm');
+  if(submitForm){
+    submitForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('hlmSName');
+      if(name && !name.value.trim()){
+        toast('请填写创作者昵称');
+        name.focus();
+        return;
+      }
+      closeModal(submitModal);
+      submitForm.reset();
+      toast('报名已提交，请留意邮箱中的上传须知');
+    });
+  }
+
+  /* ---------- 反馈弹窗 ---------- */
+  var reportModal = document.getElementById('hlmReportModal');
+  var heroReport = document.getElementById('hlmHeroReport');
+  if(heroReport) heroReport.addEventListener('click', function(){ openModal('hlmReportModal'); });
+  var reportForm = document.getElementById('hlmReportForm');
+  if(reportForm){
+    reportForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var text = document.getElementById('hlmRText');
+      if(text && !text.value.trim()){
+        toast('请填写详细说明');
+        text.focus();
+        return;
+      }
+      closeModal(reportModal);
+      reportForm.reset();
+      toast('反馈已收到，我们会在 48 小时内响应');
+    });
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('hlmTopBtn');
+  function onScroll(){
+    if(!topBtn) return;
+    if(window.scrollY > 600) topBtn.classList.add('is-on');
+    else topBtn.classList.remove('is-on');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  if(topBtn){
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+})();
+</script>
+</body>
+          </html>
